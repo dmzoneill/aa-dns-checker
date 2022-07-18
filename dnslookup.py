@@ -21,7 +21,6 @@ class BackgroundRunner:
 
     async def run_main(self):
         while True:
-            print(strftime("%a, %d %b %Y %H:%M:%S + 1010", gmtime()) + ": heartbeat")
             for X in self.servers:
                 self.total += 1
                 try:
@@ -33,7 +32,7 @@ class BackgroundRunner:
                     self.log.append(line)
                     print(line)
                     self.failed += 1
-            await asyncio.sleep(600)
+            await asyncio.sleep(10)
 
             if len(self.log) > 10000:
                 self.log = self.log[-1000:]
