@@ -18,10 +18,10 @@ class BackgroundRunner:
         self.failed = 0
         self.success = 0
         self.total = 0
-        
 
     async def run_main(self):
         while True:
+            print(strftime("%a, %d %b %Y %H:%M:%S + 1010", gmtime()) + ": heartbeat")
             for X in self.servers:
                 self.total += 1
                 try:
@@ -37,9 +37,6 @@ class BackgroundRunner:
 
             if len(self.log) > 10000:
                 self.log = self.log[-1000:]
-            
-            print("heartbeat")
-
 
 app = FastAPI()
 runner = BackgroundRunner()

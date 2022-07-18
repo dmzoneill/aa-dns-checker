@@ -9,8 +9,7 @@ spec:
   - env:
     - name: APP
       value: dns_checker
-
-    image: feeditout/dns-watcher
+    image: feeditout/dns-watcher:dev1
     imagePullPolicy: IfNotPresent
     name: automation-analytics-dns-checker
     resources:
