@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  generateName: automation-analytics-dns-checker
+  name: automation-analytics-dns-checker
+  namespace: tower-analytics-prod
+spec:
+  containers:
+  - env:
+    - name: APP
+      value: dns_checker
+
+    image: feeditout/dns-watcher
+    imagePullPolicy: IfNotPresent
+    name: automation-analytics-dns-checker
+    resources:
+      limits:
+        cpu: 500m
+        memory: 1Gi
+      requests:
+        cpu: 100m
+        memory: 100Mi
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  serviceAccount: automation-analytics-api-fastapi-v2
+  serviceAccountName: automation-analytics-api-fastapi-v2
