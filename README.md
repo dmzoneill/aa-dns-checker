@@ -1,23 +1,31 @@
 # aa-dns-checker
 
+<p align="center">
+  <img src=".github/logo.png" alt="aa-dns-checker logo" width="128" />
+</p>
+
 ## Create pod
-```
+
+```text
 kubectl create -f dns.yaml
 ```
 
 ## Delete pod
-```
+
+```text
 kubectl delete -f dns.yaml
 ```
 
 ## Review logs
-```
+
+```text
 kubectl logs -f automation-analytics-dns-checker
 curl -v http://endpoint/unformatted | jq
 ```
 
 ## Expected output
-```
+
+```text
 [2022-07-18 12:20:32 +0000] [11] [INFO] Starting gunicorn 20.1.0
 [2022-07-18 12:20:32 +0000] [11] [INFO] Listening at: http://0.0.0.0.28000 (11)
 [2022-07-18 12:20:32 +0000] [11] [INFO] Using worker: uvicorn.workers.UvicornWorker
@@ -27,4 +35,3 @@ curl -v http://endpoint/unformatted | jq
 [2022-07-18 12:20:32 +0000] [12] [INFO] Application startup complete.
 
 ```
-
